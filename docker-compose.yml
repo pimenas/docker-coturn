@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  coturn:
+    image: pimenas/docker-coturn:latest
+    container_name: coturn
+    volumes:
+      - ./etc/:/usr/local/coturn/etc/
+    ports:
+      - 443:443
+    network_mode: "host"
+    restart: always
